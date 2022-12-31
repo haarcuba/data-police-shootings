@@ -1,89 +1,59 @@
-# Fatal Force
+# Fatal Force Database
 
-The Washington Post's database contains records of every fatal shooting in the United States by a police officer in the line of duty since Jan. 1, 2015.
+In 2015, The Post began tracking details about each police-involved killing in the United States — the race of the deceased, the circumstances of the shooting, whether the person was armed and whether the person was experiencing a mental-health crisis — by manually culling local news reports, collecting information from law enforcement websites and social media, and monitoring independent databases such as [Fatal Encounters](https://fatalencounters.org/) and the now-defunct Killed by Police project. In many cases, The Post conducts additional reporting.
 
-*\[[Download the data](https://github.com/washingtonpost/data-police-shootings/releases/download/v0.1/fatal-police-shootings-data.csv)\]*
+In 2022, The Post updated its database to standardize and publish the names of the police agencies involved in each shooting to better measure accountability at the department level.
 
-In 2015, The Post began tracking more than a dozen details about each killing — including the race of the deceased, the circumstances of the shooting, whether the person was armed and whether the person was experiencing a mental-health crisis — by culling local news reports, law enforcement websites and social media, and by monitoring independent databases such as Killed by Police and Fatal Encounters. The Post conducted additional reporting in many cases.
+The 2014 killing of Michael Brown in Ferguson, Mo. began a protest movement culminating in the Black Lives Matter movement and an increased focus on police accountability nationwide. In this data set, The Post tracks only shootings with circumstances closely paralleling those like the killing of Brown — incidents in which a police officer, in the line of duty, shoots and kills a civilian. The Post is not tracking deaths of people in police custody, fatal shootings by off-duty officers or non-shooting deaths in this data set.
 
-*\[[Explore the interactive database](https://www.washingtonpost.com/graphics/investigations/police-shootings-database/)\]*
+The [FBI](https://www.fbi.gov/services/cjis/ucr/use-of-force) and the Centers for Disease Control and Prevention log fatal shootings by police, but officials acknowledge that their data is incomplete. Since 2015, The Post has documented more than twice as many fatal shootings by police as recorded by federal officials on average annually. That gap has widened in recent years, as the FBI in 2021 tracked only a third of departments’ fatal shootings.
 
-The Post is documenting only those shootings in which a police officer, in the line of duty, shoots and kills a civilian — the circumstances that most closely parallel the 2014 killing of Michael Brown in Ferguson, Mo., which began the protest movement culminating in Black Lives Matter and an increased focus on police accountability nationwide. The Post is not tracking deaths of people in police custody, fatal shootings by off-duty officers or non-shooting deaths.
+The Post seeks to make records as comprehensive as possible; the database is updated regularly as fatal shootings are reported and as facts emerge about individual cases. At times, there may be a lag between the date of the shooting and its inclusion in the database because of delays in reporting and data verification.
 
-The FBI and the Centers for Disease Control and Prevention log fatal shootings by police, but officials acknowledge that their data is incomplete. Since 2015, The Post has documented more than twice as many fatal shootings by police as recorded on average annually.
+To provide information about fatal police shootings since Jan. 1, 2015, send us an email at policeshootingsfeedback@washpost.com.
 
-The Post’s database is updated regularly as fatal shootings are reported and as facts emerge about individual cases. The Post seeks to make the database as comprehensive as possible. To provide information about fatal police shootings since Jan. 1, 2015, send us an email at [policeshootingsfeedback@washpost.com](mailto:policeshootingsfeedback@washpost.com).
+[Explore the interactive database](https://www.washingtonpost.com/graphics/investigations/police-shootings-database/)
 
-## About the data
 
-The file `fatal-police-shootings-data.csv` contains data about each fatal shooting in CSV format. The file can be [downloaded at this URL](https://github.com/washingtonpost/data-police-shootings/releases/download/v0.1/fatal-police-shootings-data.csv). Each row has the following variables:
+## Data Versions
 
-`id`: a unique identifier for each victim
+- **[Version 2](v2/)**:
+    - Version 2 includes changes to improve the data schema, increase transparency around research methodology, and add data on law enforcement agencies.
+    - Documentation and data formatted in the v2 data stucture can be found in [/v2](v2/).
+    - Details on the changes between v1 and v2 can be found in [v2/README.md](v2/README.md).
 
-`name`: the name of the victim
+- **[Version 1]((v2/))**:
+    - Data formatted in the v1 data structure can be found in [/v1](v1/).
 
-`date`: the date of the fatal shooting in YYYY-MM-DD format
+**Note:**
 
-`manner_of_death`:
-- `shot`
-- `shot and Tasered`
+- As of the official v2 release, the data files in [/v2](v2/) include all records since 2015; historic records have been transformed into the new data schema.
+- The [/v1](v1/) data is static as of the migration to v2; the data is no longer updated. Only the [/v2](v2/) datasets are updated.
 
-`armed`: indicates that the victim was armed with some sort of implement that a police officer believed could inflict harm
-- `undetermined`: it is not known whether or not the victim had a weapon
-- `unknown`: the victim was armed, but it is not known what the object was
-- `unarmed`: the victim was not armed
 
-`age`: the age of the victim
 
-`gender`: the gender of the victim. The Post identifies victims by the gender they identify with if reports indicate that it differs from their biological sex.
-- `M`: Male
-- `F`: Female
-- `None`: unknown
+## Contact & Contributing
 
-`race`:
-- `W`: White, non-Hispanic
-- `B`: Black, non-Hispanic
-- `A`: Asian
-- `N`: Native American
-- `H`: Hispanic
-- `O`: Other
-- `None`: unknown
+We welcome assistance in making the our data as complete and accurate as possible.
 
-`city`: the municipality where the fatal shooting took place. Note that in some cases this field may contain a county name if a more specific municipality is unavailable or unknown.
+Please reach out with any questions about the data, feedback, updated information or corrections.
 
-`state`: two-letter postal code abbreviation
+The best way to contribute to the data, make suggestions or provide information about fatal police shootings since Jan. 1, 2015, is to send us an email at policeshootingsfeedback@washpost.com.
 
-`signs of mental illness`: News reports have indicated the victim had a history of mental health issues, expressed suicidal intentions or was experiencing mental distress at the time of the shooting.
+Please note that we do not accept pull requests as the data file is automatically generated from our internal database.
 
-`threat_level`: The threat_level column was used to flag incidents for the story by Amy Brittain in October 2015. http://www.washingtonpost.com/sf/investigative/2015/10/24/on-duty-under-fire/ As described in the story, the general criteria for the attack label was that there was the most direct and immediate threat to life. That would include incidents where officers or others were shot at, threatened with a gun, attacked with other weapons or physical force, etc. The attack category is meant to flag the highest level of threat. The other and undetermined categories represent all remaining cases. Other includes many incidents where officers or others faced significant threats.
-
-`flee`: News reports have indicated the victim was moving away from officers
-- `Foot`
-- `Car`
-- `Not fleeing`
-
-The threat column and the fleeing column are not necessarily related. For example, there is an incident in which the suspect is fleeing and at the same time turns to fire at gun at the officer. Also, attacks represent a status immediately before fatal shots by police while fleeing could begin slightly earlier and involve a chase.
-
-`body_camera`: News reports have indicated an officer was wearing a body camera and it may have recorded some portion of the incident.
-
-`latitude` and `longitude`: the location of the shooting expressed as WGS84 coordinates, geocoded from addresses. The coordinates are rounded to 3 decimal places, meaning they have a precision of about 80-100 meters within the contiguous U.S.
-
-`is_geocoding_exact`: reflects the accuracy of the coordinates. `true` means that the coordinates are for the location of the shooting (within approximately 100 meters), while `false` means that coordinates are for the centroid of a larger region, such as the city or county where the shooting happened.
-
-## Contributing
-
-We welcome assistance in making the our data as complete and accurate as possible. The best way to contribute to the data, make suggestions or provide information about fatal police shootings since Jan. 1, 2015, is to send us an email at [policeshootingsfeedback@washpost.com](mailto:policeshootingsfeedback@washpost.com). Please note that we do not accept pull requests as the data file is generated downstream of our internal database.
 
 ## Licensing
 
-The data is published under an [Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+The data is published under an Attribution-NonCommercial-ShareAlike 4.0 International CC BY-NC-SA 4.0 license.
 
-## Contact
-
-Contact [policeshootingsfeedback@washpost.com](mailto:policeshootingsfeedback@washpost.com) with any questions about the data, feedback, updated information or corrections.
 
 ## Credits
 
-Research and reporting: Julie Tate, Jennifer Jenkins and Steven Rich
+**Research and reporting:** Jennifer Jenkins, Monika Mathur, Razzan Nakhlawi, Steven Rich and Andrew Ba Tran.
 
-Database development: John Muyskens
+**Design and development:** Chris Alcantara, Katlyn Alo, Emma Baker, Aaron Brezel, Armand Emamdjomeh, Jake Kara, Paige Moody, James O’Toole and Leslie Shapiro.
+
+**Editing:** Sarah Childress, David Fallis, Reuben Fischer-Baum, Meghan Hoyer and Courtney Kan.
+
+**Past contributors:** Keith L. Alexander, Sophie Andrews, Jason Bartz, Amy Brittain, Swetabh Changkakoti, Hong Sen Du, Kennedy Elliot, Linda Epstein, Holden Foreman, Joe Fox, Wendy Galietta, Kaeti Hinck, Laris Karklis, Kimberly Kindy, Whitney Leaming, Emily Liu, Wesley Lowery, Ted Mellnik, Lori Montgomery, Deblina Mukherjee, John Muyskens, Erik Reyna, Danielle Rindler, Kavya Sukumar, Julie Tate, Susan Tyler, Divya Verma, Aaron Williams.
