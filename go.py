@@ -3,8 +3,8 @@ import datetime
 import IPython
 
 
-def main():
-    shootings = pd.read_csv('fatal-police-shootings-data.csv')
+def v1():
+    shootings = pd.read_csv('v1/fatal-police-shootings-data.csv')
     gun=shootings['armed']=='gun'
     unarmed=shootings['armed']=='unarmed'
     unarmed_shootinge_race_counts = shootings[unarmed]['race'].value_counts()
@@ -20,4 +20,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    v1()
